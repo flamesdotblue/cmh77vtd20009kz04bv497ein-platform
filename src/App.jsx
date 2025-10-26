@@ -1,28 +1,35 @@
-import { useState } from 'react'
+import Header from './components/Header';
+import StatsOverview from './components/StatsOverview';
+import FeatureGrid from './components/FeatureGrid';
+import CallToAction from './components/CallToAction';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-800">
+      <Header />
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="mt-8">
+          <div className="rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 p-6">
+            <h1 className="text-2xl font-semibold tracking-tight">School Management System</h1>
+            <p className="mt-2 text-slate-600">A production-grade platform to manage academics, attendance, results, fees, and communications—built with scalability and security in mind.</p>
+          </div>
+        </section>
+        <section className="mt-8">
+          <StatsOverview />
+        </section>
+        <section className="mt-10">
+          <FeatureGrid />
+        </section>
+        <section className="mt-12 mb-16">
+          <CallToAction />
+        </section>
+      </main>
+      <footer className="border-t border-slate-200 py-6 mt-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-sm text-slate-500 flex items-center justify-between">
+          <span>© {new Date().getFullYear()} EduStack Systems</span>
+          <span>Secure • Scalable • Observable</span>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
